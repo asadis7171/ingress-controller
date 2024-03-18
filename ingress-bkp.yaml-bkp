@@ -6,29 +6,28 @@ metadata:
     kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
-    alb.ingress.kubernetes.io/subnets: subnet-02dbc33502db4bfca,subnet-0a92d1d1ac0c7356e 
+    alb.ingress.kubernetes.io/subnets: subnet-07f3ab2b8b1832993,subnet-0190c6a08c07ee29f
 spec:
   defaultBackend:
     service:
-      name: test-first
+      name: test-second
       port:
         number: 8080
   rules:
-  - host: asadiliyasshaikh.com
+  - host: kubernetes.docker.internal
     http:
       paths:
-      - path: /asad
+      - path: /one/
         pathType: Prefix
         backend:
           service:
             name: test-first
             port:
               number: 8080
-      - path: /fardin
+      - path: /two/
         pathType: Prefix
         backend:
           service:
             name: test-second
             port:
               number: 8080
-                #path: /

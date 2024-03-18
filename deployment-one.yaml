@@ -15,7 +15,9 @@ spec:
     spec:
       containers:
       - name: sample-first
-        image: docker.io/anaisurlichs/flask-one:1.0   ##You can use any docker repository to pull your image.
+        image: asadis7171/ingress:app1   ##You can use any docker repository to pull your image.
+        ports:
+        - containerPort: 8080
 ---
 apiVersion: v1
 kind: Service
